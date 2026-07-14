@@ -169,25 +169,25 @@ DOI: [10.1145/3756884.3768392](https://doi.org/10.1145/3756884.3768392)
 
 ## Portfolio Repository Scope
 
-이 저장소는 핵심 input-to-avatar 구현을 검토하기 위한 **source-only portfolio bundle**입니다.
+This repository is a **source-only portfolio bundle** intended to show the multimodal input-to-avatar movement pipeline and implementation structure.
 
 Included:
 
-- MediaPipe 기반 손가락 굽힘 분류 코드
-- WebSocket gesture·sensor message bridge
-- Unity dance variation 및 motion-parameter control 코드
-- Animator·Humanoid IK 연동과 실험 logging 코드
+- MediaPipe-based finger-bend classification
+- WebSocket bridge for gesture and sensor messages
+- Unity dance-variation and motion-parameter control
+- Animator and Humanoid IK integration with experiment logging
 
 Excluded:
 
-- Unity scene, prefab, avatar model, Animator Controller 및 animation assets
-- Movella DOT 원본 센서 기록과 실험 CSV
-- 사용자 영상, 참여자 데이터 및 build output
-- Unity가 자동 생성하는 `Library/`, `Temp/`, `Logs/`, `Obj/` 폴더
+- Unity scenes, prefabs, avatar models, Animator Controller, and animation assets
+- Raw Movella DOT sensor recordings and experiment CSV files
+- Participant videos, participant data, and build outputs
+- Unity-generated `Library/`, `Temp/`, `Logs/`, and `Obj/` folders
 
-따라서 이 저장소만으로 Unity 장면을 바로 실행할 수는 없습니다. 실제 실행에는 원래 프로젝트의 humanoid rig, Animator state, IK target, scene reference, WebSocketSharp 및 Movella DOT data source가 필요합니다.
+This repository is not independently runnable without the original Unity scene references, Animator Controller, humanoid rig, IK targets, Movella DOT data source, and WebSocketSharp dependency. See [SCRIPT_GUIDE.md](SCRIPT_GUIDE.md) for the verified runtime flow and file dependencies.
 
-외부 장비에서 Unity WebSocket server를 실행할 때만 연결 주소를 설정합니다.
+For Unity running on another device, set the WebSocket address before starting the Python sender.
 
 ```bash
 export UNITY_WS_URL="ws://<unity-host>:5678"
