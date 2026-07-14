@@ -158,7 +158,7 @@ Leg-height control + movement-velocity control
 
 ## Related Publication
 
-This repository is a portfolio-oriented implementation summary based on the following published poster.
+이 저장소는 다음 포스터 논문에서 구현한 내용을 취업 포트폴리오용으로 정리한 공개 버전입니다.
 
 **Minimal Input to Maximal Movement: Real-Time Avatar Control with Dual-sensor**  
 Poster, 31st ACM Symposium on Virtual Reality Software and Technology (VRST 2025)
@@ -169,25 +169,27 @@ DOI: [10.1145/3756884.3768392](https://doi.org/10.1145/3756884.3768392)
 
 ## Portfolio Repository Scope
 
-This repository is a **source-only portfolio bundle** intended to show the multimodal input-to-avatar movement pipeline and implementation structure.
+이 저장소는 multimodal input-to-avatar movement 파이프라인과 구현 구조를 검토할 수 있도록 정리한 source-only 포트폴리오 저장소입니다.
 
-Included:
+### Included
 
-- MediaPipe-based finger-bend classification
-- WebSocket bridge for gesture and sensor messages
-- Unity dance-variation and motion-parameter control
-- Animator and Humanoid IK integration with experiment logging
+- MediaPipe 기반 손가락 굽힘 단계 분류
+- 제스처 및 센서 메시지 전달을 위한 WebSocket bridge
+- Unity 기반 춤 동작 variation 및 motion parameter 제어
+- Animator·Humanoid IK 연동과 실험 로그 구현
 
-Excluded:
+### Excluded
 
-- Unity scenes, prefabs, avatar models, Animator Controller, and animation assets
-- Raw Movella DOT sensor recordings and experiment CSV files
-- Participant videos, participant data, and build outputs
-- Unity-generated `Library/`, `Temp/`, `Logs/`, and `Obj/` folders
+- Unity scene, prefab, avatar model, Animator Controller 및 animation asset
+- Movella DOT 원본 센서 기록과 실험 CSV
+- 참가자 영상, 참가자 데이터 및 build 결과물
+- Unity 자동 생성 폴더인 `Library/`, `Temp/`, `Logs/`, `Obj/`
 
-This repository is not independently runnable without the original Unity scene references, Animator Controller, humanoid rig, IK targets, Movella DOT data source, and WebSocketSharp dependency. See [SCRIPT_GUIDE.md](SCRIPT_GUIDE.md) for the verified runtime flow and file dependencies.
+이 저장소는 원본 Unity scene reference, Animator Controller, humanoid rig, IK target, Movella DOT data source, WebSocketSharp 의존성 없이 독립적으로 실행할 수 없습니다.
 
-For Unity running on another device, set the WebSocket address before starting the Python sender.
+검증된 실행 흐름과 파일별 의존 관계는 [SCRIPT_GUIDE.md](SCRIPT_GUIDE.md)에서 확인할 수 있습니다.
+
+Unity를 다른 장치에서 실행할 경우 Python sender를 실행하기 전에 WebSocket 주소를 설정합니다.
 
 ```bash
 export UNITY_WS_URL="ws://<unity-host>:5678"
